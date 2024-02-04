@@ -1,0 +1,190 @@
+c
+/* グレー 背景 #EDEDED 青 ボタン メニュー #6E85B7 青うすい 予約確認テーブル #9CB4CC 青こい 予約するボタン #748DA6 白 文字色 カード背景 フォーム背景 #fff 赤 お気に入りハート #BB371A */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    background-color: #EDEDED;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: senter;
+    align-items: center;
+    margin: 0;
+    text-align: center;
+    line-height: 16px;
+    font-weight: bolder;
+    color: #6E85B7;
+}
+
+.hamburger__logo {
+    display: inline-block;
+    margin: 10px 3px 3px;
+    font-size: 20px;
+    line-height: 10px;
+}
+
+/* nav {
+    margin: 10px 10px 0 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 16px;
+    cursor: pointer;
+} */
+
+.hamburger {
+    margin-top: 10px;
+    margin-left: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.row {
+    margin: 5px;
+    width: 20px;
+    height: 2px;
+    background-color: black;
+}
+
+li {
+    list-style: none;
+    margin-top: 5px;
+    color: #6E85B7;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.hamburger-menu a {
+    color: #6E85B7;
+}
+
+.hamburger-menu button {
+    border: none;
+    outline: none;
+    color: #6E85B7;
+    padding: 10px;
+    background: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.hamburger-menu {
+    position: absolute;
+    top: 0;
+    left: -300px;
+    background-color: gray;
+    padding: 30px 50px;
+    transition: all 0.5s 0s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.show {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    padding: 20px 50px;
+}
+
+.hamburger-menu__close {
+    padding: 20px;
+    cursor: pointer;
+}
+
+.hamburger-menu__square_btn {
+    display: block;
+    position: relative;
+}
+
+.hamburger-menu__square_btn::before,
+.hamburger-menu__square_btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    /* 棒の幅（太さ） */
+    height: 20px;
+    /* 棒の高さ */
+    background: #6E85B7;
+    /* バツ印の色 */
+}
+
+.hamburger-menu__square_btn::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.hamburger-menu__square_btn::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* 
+
+.header__ul {
+    list-style: none;
+    display: flex;
+    margin: 20px auto;
+    padding-right: 10px;
+}
+
+.header__ul li {
+    margin-left: 30px;
+    font-size: 16px;
+}
+
+.button__header--button {
+    font-weight: bold;
+} */
+
+main {
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+
+}
+
+/* 
+.button__header button {
+    font-size: 18px;
+    width: 100%;
+    border: none;
+    background: white;
+    color: black;
+    cursor: pointer;
+    line-height: 10px;
+    font-weight: bold;
+} */

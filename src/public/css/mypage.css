@@ -1,0 +1,139 @@
+/* 変更を加えたらthanks.cssも変更する */
+
+main {
+    width: 1000px;
+}
+
+.user-name {
+    margin: 0 auto;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.reserve {
+    margin-top: 30px;
+    font-weight: bold;
+    text-align: left;
+    width: 360px;
+    /* margin: 30px auto; */
+}
+
+.reserve__card {
+    font-weight: normal;
+    margin-top: 10px;
+    padding-top: 5px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+    background-color: #6E85B7;
+    border-radius: 3px;
+    color: #fff;
+}
+
+.reserve__title--text i {
+    margin-right: 20px;
+}
+
+.reserve__title {
+    display: flex;
+    justify-content: space-between;
+    font-weight: normal;
+    color: #fff;
+    padding: 10px 10px 10px 20px;
+    text-align: left;
+    letter-spacing: 1px;
+}
+
+.reserve__title--close {
+    padding-right: 10px;
+}
+
+.reserve__title--close button {
+    border: none;
+    outline: none;
+    background: #6E85B7;
+    cursor: pointer;
+}
+
+.reserve__item {
+    padding: 20px;
+    border-radius: 0 0 3px 3px;
+}
+
+.reserve__item th {
+    font-weight: normal;
+    padding: 0 20px 10px 0;
+}
+
+.reserve__item td {
+    padding-bottom: 10px;
+}
+
+.favorite {
+    font-weight: bold;
+    text-align: left;
+    width: 50%;
+    margin: 30px auto;
+}
+
+.favorite__wrapper {
+    display: flex;
+}
+
+.favorite__card {
+    text-align: left;
+    width: 360px;
+    margin: 10px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+.shop-name {
+    font-size: large;
+}
+
+.favorite__card--img img {
+    width: 100%;
+    border-radius: 3px 3px 0 0;
+}
+
+.favorite__card--content {
+    padding: 15px 25px;
+}
+
+.favorite__card--tag {
+    display: flex;
+    justify-content: left;
+    font-weight: normal;
+}
+
+.shop-area {
+    padding-right: 10px;
+}
+
+.favorite__card--footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.detail-button a {
+    border: none;
+    outline: none;
+    margin-top: 10px;
+    padding: 5px 15px;
+    background: #6E85B7;
+    display: inline-block;
+    /* 要素の文字数に応じて幅が変更されるためにinline-blockを指定 */
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 3px;
+    letter-spacing: 1px;
+}
+
+.heart {
+    margin-top: 10px;
+    padding: 5px 15px;
+}
