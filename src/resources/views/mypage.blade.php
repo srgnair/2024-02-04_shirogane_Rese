@@ -20,12 +20,13 @@
     <div class="reserve">
         予約状況
 
-        @foreach($reservations as $reservation)
+        @foreach($reservations as $key => $reservation)
 
         <div class="reserve__card">
             <div class="reserve__title">
                 <div class="reserve__title--text">
-                    <i class="fa-solid fa-clock" style="color: #ffffff;"></i>予約１
+                    <i class="fa-solid fa-clock fa-xl" style="color: #ffffff;"></i>
+                    <p>予約 {{ $key + 1 }}</p>
                 </div>
                 <div class="reserve__title--close">
                     <form action="/mypage" method="POST">
@@ -33,7 +34,7 @@
                         @csrf
                         <input type="hidden" name="id" value="{{ $reservation['id'] }}">
                         <button type="submit">
-                            <i class="fa-regular fa-circle-xmark" style="color: #ffffff;"></i>
+                            <i class="fa-regular fa-circle-xmark fa-2xl" style="color: #ffffff;"></i>
                         </button>
                     </form>
                     <!-- ×ボタンで削除 -->
@@ -67,61 +68,56 @@
 
     <div class="favorite">
         お気に入り店舗
+
         <div class="favorite__wrapper">
+
+            @foreach($likes as $like)
+
             <div class="favorite__card">
                 <div class="favorite__card--img">
-                    <img src="{{ asset('img/sushi.jpg') }}" alt="">
+                    <img src="{{ $like->shop->image }}" alt="">
                 </div>
                 <div class="favorite__card--content">
                     <div class="shop-name">
-                        仙人
+                        {{ $like->shop->shop_name }}
                     </div>
                     <div class="favorite__card--tag">
                         <div class="shop-area">
-                            ＃東京都
+                            #{{ $like->shop->area }}
                         </div>
                         <div class="shop-genre">
-                            ＃寿司
+                            #{{ $like->shop->genre }}
                         </div>
                     </div>
                     <div class="favorite__card--footer">
                         <div class="detail-button">
-                            <button>詳しくみる</button>
+                            <a href="{{ route('detail', ['id' => $like->shop->id]) }}">詳しくみる</a>
                         </div>
                         <div class="heart">
-                            <i class="fa-solid fa-heart" style="color: #BB371A;"></i>
+                            @if(Auth::check() && Auth::user()->is_like($like->shop->id))
+                            <form action="{{ route('deleteLike', ['shop_id' => $like->shop->id] ) }}" method="POST" class="mb-4">
+                                @csrf
+                                @method('DELETE')
+                                <input type="hidden" name="shop_id" value="{{$like->shop->id}}">
+                                <button type="submit">
+                                    <i class="fa-solid fa-heart fa-2xl" style="color: #BB371A;"></i>
+                                </button>
+                            </form>
+                            @else
+                            <form action="{{ route('like', ['shop_id' => $like->shop->id])  }}" method="POST" class="mb-4">
+                                @csrf
+                                <input type="hidden" name="shop_id" value="{{$like->shop->id}}">
+                                <button type="submit">
+                                    <i class="fa-regular fa-heart fa-2xl"></i>
+                                </button>
+                            </form>
+                            @endif
                         </div>
                     </div>
 
                 </div>
             </div>
-            <div class="favorite__card">
-                <div class="favorite__card--img">
-                    <img src="{{ asset('img/sushi.jpg') }}" alt="">
-                </div>
-                <div class="favorite__card--content">
-                    <div class="shop-name">
-                        仙人
-                    </div>
-                    <div class="favorite__card--tag">
-                        <div class="shop-area">
-                            ＃東京都
-                        </div>
-                        <div class="shop-genre">
-                            ＃寿司
-                        </div>
-                    </div>
-                    <div class="favorite__card--footer">
-                        <div class="detail-button">
-                            <button>詳しくみる</button>
-                        </div>
-                        <div class="heart">
-                            <i class="fa-solid fa-heart" style="color: #BB371A;"></i>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+            @endforeach
 
         </div>
     </div>

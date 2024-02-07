@@ -11,11 +11,41 @@ use Illuminate\Database\Eloquent\Model;
 
 class ShopController extends Controller
 {
-    public function allShops()
+    public function allShops(Request $request)
     {
-        $shops = Shop::all();
+        /* キーワードの取得 */
+        $keyword = $request->input('keyword');
+
+        /* エリアの取得 */
+        $area = $request->input('area');
+
+        /* ジャンルの取得 */
+        $genre = $request->input('genre');
+
+        // クエリビルダーを初期化
+        $query = Shop::query();
+
+        // キーワードが入力されている場合は検索条件に追加
+        if (!empty($keyword)) {
+            $query->where('shop_name', 'LIKE', "%{$keyword}%");
+        }
+
+        // エリアが選択されている場合は検索条件に追加
+        if (!empty($area)) {
+            $query->where('area', $area);
+        }
+
+        // ジャンルが選択されている場合は検索条件に追加
+        if (!empty($genre)) {
+            $query->where('genre', $genre);
+        }
+
+        // 全ての条件を満たすレコードを取得
+        $shops = $query->get();
+
         return view('allShops', compact('shops'));
     }
+
 
     public function detail($id)
     {
@@ -46,8 +76,9 @@ class ShopController extends Controller
         // ログイン中のユーザーの予約情報を取得する
         $user = Auth::user();
         $reservations = $user->reserves()->with('shop')->get();
+        $likes = $user->likes()->with('shop')->get();
 
-        return view('mypage', compact('reservations'));
+        return view('mypage', compact('reservations', 'likes'));
     }
 
     public function delete(Request $request)

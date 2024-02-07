@@ -42,7 +42,7 @@ class UserController extends Controller
             'password' => $hashedPassword,
         ]);
 
-        return redirect()->route('home');
+        return redirect()->route('thanks');
     }
 
 

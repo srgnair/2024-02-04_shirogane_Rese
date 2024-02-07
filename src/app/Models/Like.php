@@ -23,4 +23,8 @@ class like extends Model
         return $this->belongsTo(Shop::class);
     }
 
+    public function is_like($shop_id)
+    {
+        return $this->likes()->where('shop_id', $shop_id)->exists();
+    }
 }

@@ -28,24 +28,30 @@ class User extends Authenticatable
         return $this->hasMany(Reserve::class);
     }
 
-    public function like_shops()
-    {
-        return $this->belongsToMany(Shop::class, 'shop_user', 'user_id', 'shop_id');
-    }
-
-    //     このbookmark_articles()メソッドを使うと、ユーザーがブックマークした記事リソースに容易にアクセスできるようになります。例えば、自分がブックマークした記事の一覧を取得したいならば次のように書きます。
+    //     このlike_shops()メソッドを使うと、ユーザーがブックマークした記事リソースに容易にアクセスできるようになります。例えば、自分がブックマークした記事の一覧を取得したいならば次のように書きます。
 
     // （例）
 
     // $user = \Auth::user();
-    // $articles = $user->bookmark_articles()->get();
+    // $articles = $user->like_shops()->get();
     // https://newmonz.jp/lesson/laravel-basic/chapter-9
 
-    public function is_bookmark($articleId)
+    // public function is_like($shop_id)
+    // {
+    //     return $this->likes()->where('shop_id', $shop_id)->exists();
+    // }
+
+    public function is_like($shop_id)
     {
-        return $this->bookmarks()->where('articke_id', $articleId)->exists();
+        return $this->like_shops()->where('shop_id', $shop_id)->exists();
     }
-     protected $fillable = [
+
+    public function like_shops()
+    {
+        return $this->belongsToMany(Shop::class, 'likes', 'user_id', 'shop_id')->withTimestamps();
+    }
+
+    protected $fillable = [
         'name',
         'email',
         'password',

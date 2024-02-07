@@ -24,4 +24,10 @@ class Reserve extends Model
     {
         return $this->belongsTo(Shop::class);
     }
+
+    public function getReservedTimeAttribute($value)
+    {
+        // 時刻のフォーマットを変更して返す
+        return date('H:i', strtotime($value));
+    }
 }

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\LikeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,13 +18,15 @@ use App\Http\Controllers\ShopController;
 */
 
 Route::get('/register', [UserController::class, 'registerView']);
-Route::get('/thanks', [UserController::class, 'thanks']);
+Route::get('/thanks', [UserController::class, 'thanks'])->name('thanks');
 Route::get('/login', [LoginController::class, 'loginView'])->name('login');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/', [ShopController::class, 'allShops'])->name('home');
+Route::post('/{shop_id}', [LikeController::class, 'like'])->name('like');
+Route::delete('/{shop_id}', [LikeController::class, 'deleteLike'])->name('deleteLike');
 Route::get('/detail/{id}', [ShopController::class, 'detail'])->name('detail');
-Route::post('/detail', [ShopController::class, 'reserve'])->name('reserve');
+Route::post('/detail/(shop_id)', [ShopController::class, 'reserve'])->name('reserve');
 Route::get('/reserve', [ShopController::class, 'completeReserve'])->name('completeReserve');
 Route::get('/mypage', [ShopController::class, 'mypage'])->name('mypage');
 Route::delete('/mypage', [ShopController::class, 'delete'])->name('delete');

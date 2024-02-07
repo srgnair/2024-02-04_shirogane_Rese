@@ -16,7 +16,7 @@
     </div>
 
     <div class="register-complete__link">
-        ログインする
+        <a href="{{ route('login') }}">ログインする</a>
     </div>
 
 </div>
