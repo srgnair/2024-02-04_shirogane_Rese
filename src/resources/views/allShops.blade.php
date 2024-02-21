@@ -8,9 +8,6 @@
 @endsection
 @section('content')
 
-<!-- ★にはアイコンを挿入する -->
-<!-- このページだけヘッダー違う？そもそもヘッダーとして扱わない？ 上部にメニューあり-->
-
 <div class="all-shops__container">
 
     <div class="all-shops__serch-menu">

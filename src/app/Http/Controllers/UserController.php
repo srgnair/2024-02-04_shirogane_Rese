@@ -46,7 +46,7 @@ class UserController extends Controller
     }
 
 
-    public function thanks()
+    public function registerThanks()
     {
         return view('thanks');
     }

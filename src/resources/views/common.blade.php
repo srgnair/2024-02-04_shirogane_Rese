@@ -15,8 +15,75 @@
     <div class="wrapper">
 
         <header>
+            @if(Auth::check() && Auth::user()->role === 'mainAdmin')
 
-            @if (Auth::check())
+            <div class="hamburger" id="hamburger">
+                <i class="fa-solid fa-bars"></i>
+                <div class="hamburger__logo">Rese</div>
+            </div>
+
+            <div class="hamburger-menu" id="hamburger-menu">
+                <div class="hamburger-menu__close" id="close">
+                    <span class="hamburger-menu__square_btn"></span>
+                </div>
+                <ul>
+                    <li>
+                        <a href="{{ route('home') }}">Home</a>
+                    </li>
+                    <form action="/logout" method="post">
+                        @csrf
+                        <li>
+                            <button class="hamburger-menu__button">
+                                Logout
+                            </button>
+                        </li>
+                    </form>
+                    <li>
+                        <a href="{{ route('mypage') }}">Mypage</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('addNewPartnerView') }}">Add new partner</a>
+                    </li>
+                </ul>
+            </div>
+            <script src="./script.js"></script>
+            <script src="{{ asset('/js/hamburger.js') }}"></script>
+
+            @elseif(Auth::check() && Auth::user()->role === 'shopAdmin')
+
+            <div class="hamburger" id="hamburger">
+                <i class="fa-solid fa-bars"></i>
+                <div class="hamburger__logo">Rese</div>
+            </div>
+
+            <div class="hamburger-menu" id="hamburger-menu">
+                <div class="hamburger-menu__close" id="close">
+                    <span class="hamburger-menu__square_btn"></span>
+                </div>
+                <ul>
+                    <li>
+                        <a href="{{ route('home') }}">Home</a>
+                    </li>
+                    <form action="/logout" method="post">
+                        @csrf
+                        <li>
+                            <button class="hamburger-menu__button">
+                                Logout
+                            </button>
+                        </li>
+                    </form>
+                    <li>
+                        <a href="{{ route('mypage') }}">Mypage</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('shopAdminView') }}">Admin</a>
+                    </li>
+                </ul>
+            </div>
+            <script src="./script.js"></script>
+            <script src="{{ asset('/js/hamburger.js') }}"></script>
+
+            @elseif (Auth::check())
 
             <div class="hamburger" id="hamburger">
                 <i class="fa-solid fa-bars"></i>

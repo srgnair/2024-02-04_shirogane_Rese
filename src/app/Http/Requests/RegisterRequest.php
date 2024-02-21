@@ -1,5 +1,5 @@
 <?php
-
+// 確認次第削除予定
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;

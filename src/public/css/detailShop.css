@@ -75,6 +75,27 @@ main {
     text-align: left;
 }
 
+.radioform__item {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.radioform__item input {
+    cursor: pointer;
+}
+
+.form__item--textarea textarea {
+    text-align: left;
+    border: none;
+    outline: none;
+    width: 90%;
+    height: 150px;
+    font-size: large;
+    margin-top: 20px;
+}
+
 .form__item input,
 .form__item select {
     border: none;

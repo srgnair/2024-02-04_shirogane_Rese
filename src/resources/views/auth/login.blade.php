@@ -15,23 +15,25 @@
         login
     </div>
     <div class="login-form__content">
-        <!-- @if (count($errors) > 0)
-        <p>入力に問題があります</p>
-            @endif -->
+        @if (count($errors) > 0)
+        以下の内容を確認してください
+        @endif
+        @error('email')
+        <p>{{$errors->first('email')}}</p>
+        @enderror
+        @error('email')
+        <p>{{$errors->first('password')}}</p>
+        @enderror
+
         <form class="form__wrapper" action="/login" method="POST">
             @csrf
             <div class="form">
 
-                <!-- @error('email')
-                <p>{{$errors->first('email')}}</p>
-                @enderror -->
                 <div class="form__item">
                     <label for="email"><i class="fa-solid fa-envelope"></i></label>
                     <input class="form__item--control" type="email" name="email" value="{{ old('email') }}" placeholder="Email" />
                 </div>
-                <!-- @error('email')
-                <p>{{$errors->first('password')}}</p>
-                @enderror -->
+
                 <div class="form__item">
                     <label for="password"><i class="fa-solid fa-lock"></i></label>
                     <input class="form__item--control" type="password" name="password" value="{{ old('password') }}" placeholder="Password" />

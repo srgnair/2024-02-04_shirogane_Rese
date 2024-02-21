@@ -40,6 +40,7 @@ class Shop extends Model
         'area',
         'genre',
         'introduction',
+        'shop_admin_id'
     ];
 
 
@@ -51,5 +52,15 @@ class Shop extends Model
     public function likes()
     {
         return $this->hasMany(Like::class);
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
+
+    public function shop_admin()
+    {
+        return $this->belongsTo(User::class, 'shop_admin_id');
     }
 }

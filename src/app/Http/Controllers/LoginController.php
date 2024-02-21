@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use App\Http\Requests\LoguinRequest;
+use App\Http\Requests\LoginRequest;
 
 class LoginController extends Controller
 {
@@ -20,5 +20,15 @@ class LoginController extends Controller
         Auth::logout();
 
         return redirect()->route('login');
+    }
+
+    public function shopAdminView()
+    {
+        return view('shopAdmin');
+    }
+
+    public function mainAdminView()
+    {
+        return view('mainAdmin');
     }
 }
