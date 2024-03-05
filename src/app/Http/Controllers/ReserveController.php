@@ -14,6 +14,7 @@ use App\Http\Requests\ReserveRequest;
 
 class ReserveController extends Controller
 {
+
     public function reserve(ReserveRequest $request)
     {
         $user_id = Auth::id();
@@ -40,7 +41,7 @@ class ReserveController extends Controller
         return redirect()->route('mypage');
     }
 
-       public function reserveComplete()
+    public function reserveComplete()
     {
         return view('completeReserve');
     }

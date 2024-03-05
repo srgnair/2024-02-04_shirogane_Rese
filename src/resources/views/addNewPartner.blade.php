@@ -1,6 +1,6 @@
 @extends('common')
 @section('title')
-<title>admin</title>
+<title>addNewPartner</title>
 @endsection
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/detailShop.css') }}">

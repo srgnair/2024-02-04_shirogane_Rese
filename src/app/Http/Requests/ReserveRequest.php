@@ -4,6 +4,8 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
+
 
 class ReserveRequest extends FormRequest
 {
@@ -29,27 +31,23 @@ class ReserveRequest extends FormRequest
                 'required',
                 'date',
                 'after_or_equal:' . now()->addDay()->format('Y-m-d'), // 明日以降の日付
-                'before_or_equal:' . now()->addMonth()->format('Y-m-d') // 1ヶ月以内の日付
+                'before_or_equal:' . now()->addMonth()->format('Y-m-d'), // 1ヶ月以内の日付
+                Rule::unique('reserves')->where(function ($query) {
+                    return $query->where('reserved_date', $this->input('reserved_date'))
+                        ->where('user_id', auth()->id());
+                })
             ],
             'reserved_time' => 'required',
-            'number' => 'required'
+            'number' => 'required',
+            'shop_id' => 'required',
         ];
     }
+
 
     public function messages()
     {
         return [
-            'name.required' => '名前を入力してください',
-            'name.max' => '名前を100文字以内で入力してください',
-            'name.string' => '名前を文字列で入力してください',
-            'email.required' => 'メールアドレスを入力してください',
-            'email.max' => 'メールアドレスを255文字以下で入力してください',
-            'email.email' => 'メールアドレスをメール方式で入力してください',
-            'email.unique' => 'ほかのメールアドレスを指定してください',
-            'password.required' => 'パスワードを入力してください',
-            'password.min' => 'パスワードを8文字以上で入力してください',
-            'password.max' => 'パスワードを100文字以内で入力してください',
-            'password.string' => 'パスワードを文字列で入力してください',
+            //
         ];
     }
 }

@@ -1,6 +1,6 @@
 @extends('common')
 @section('title')
-<title>detail</title>
+<title>home</title>
 @endsection
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/allShops.css') }}">

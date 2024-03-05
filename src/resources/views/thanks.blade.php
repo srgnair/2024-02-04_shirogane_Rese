@@ -12,7 +12,8 @@
 <div class="register-complete">
 
     <div class="register-complete__title">
-        会員登録ありがとうございます
+        会員登録ありがとうございます。<br>
+        送信されたメール内から認証を完了してください。
     </div>
 
     <div class="register-complete__link">

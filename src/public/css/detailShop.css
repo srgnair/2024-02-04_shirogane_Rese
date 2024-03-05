@@ -1,8 +1,11 @@
 main {
     width: 1100px;
+    padding: 50px 0;
+}
+
+.container__shop-reserve {
     display: flex;
     justify-content: space-between;
-    padding: 50px 0;
 }
 
 .shop {
@@ -110,6 +113,7 @@ main {
 
 .form__item input {
     width: 30%;
+    font-weight: bolder;
 }
 
 .form__item select {
@@ -151,4 +155,8 @@ main {
     background: #3f6ea6;
     position: absolute;
     bottom: 0;
+}
+
+.qrcode {
+    padding-top: 40px;
 }

@@ -8,6 +8,7 @@ use App\Http\Controllers\LikeController;
 use App\Http\Controllers\ReserveController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,8 +54,24 @@ Route::post('/admin/shop/editshop', [AdminController::class, 'editShop'])->name(
 
 Route::get('/admin/shop/readreserves', [AdminController::class, 'readReserves'])->name('readReserves');
 
+Route::get('/admin/shop/sendEmail', [AdminController::class, 'sendEmailView'])->name('sendEmailView');
+Route::post('/admin/shop/sendEmail', [AdminController::class, 'sendEmail'])->name('sendEmail');
+
 Route::get('/admin/main/addNewPartner', [AdminController::class, 'addNewPartnerView'])->name('addNewPartnerView');
 Route::post('/admin/main/addNewPartner', [AdminController::class, 'addNewPartner'])->name('addNewPartner');
+
+Route::get('/reserveData', [AdminController::class, 'useQrCode'])->name('reserveDataView');
+
+Route::prefix('payment')->name('payment.')->group(function () {
+    Route::get('/create', [PaymentController::class, 'create'])->name('create');
+    Route::post('/store', [PaymentController::class, 'store'])->name('store');
+});
+
+Route::get(
+    '/phpinfo',
+    [UserController::class, 'showPhpInfo']
+)->name('showPhpInfo');
+
 
 // authミドルウェアで認証済みかチェックする
 // Route::middleware('auth')->group(function () {

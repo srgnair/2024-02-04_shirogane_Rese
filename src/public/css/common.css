@@ -74,9 +74,10 @@ header {
 
 li {
     list-style: none;
-    margin-top: 5px;
+    margin-top: 0;
     color: #6E85B7;
     padding: 5px 10px;
+    margin: 10px;
     cursor: pointer;
 }
 
@@ -88,11 +89,12 @@ li {
     border: none;
     outline: none;
     color: #6E85B7;
-    padding: 10px;
+    padding: 0px;
     background: #fff;
     font-weight: bold;
     cursor: pointer;
     font-size: 18px;
+    margin: -10px;
 }
 
 .hamburger-menu {

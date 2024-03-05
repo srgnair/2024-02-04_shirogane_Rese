@@ -35,6 +35,8 @@ class ShopsTableSeeder extends Seeder
 
     public function run()
     {
+        // Shop::truncate();
+
         DB::table('shops')->insert([
             [
                 'shop_name' => '仙人',

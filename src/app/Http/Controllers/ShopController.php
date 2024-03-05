@@ -63,11 +63,11 @@ class ShopController extends Controller
     {
         // ログイン中のユーザーの予約情報を取得する
         $user = Auth::user();
-        $reservations = $user->reserves()->with('shop')->get();
+        // $reservations = $user->reserves()->with('shop')->get();
+        $reservations = $user->reserves()->with('shop')->orderBy('reserved_date', 'asc')->get();
         $likes = $user->likes()->with('shop')->get();
         // $reviews = Review::where('user_id', $user->id)->get();
 
         return view('mypage', compact('reservations', 'likes'));
     }
-
 }

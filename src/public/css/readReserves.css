@@ -1,0 +1,15 @@
+.read-reserves {
+    width: 800px;
+    margin: 100px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+.read-reserves th {
+    padding: 30px;
+}
+
+.read-reserves td {
+    padding-bottom: 10px;
+}

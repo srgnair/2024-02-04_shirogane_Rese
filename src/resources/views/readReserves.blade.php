@@ -3,12 +3,12 @@
 <title>予約一覧</title>
 @endsection
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/allShops.css') }}">
+<link rel="stylesheet" href="{{ asset('css/readReserves.css') }}">
 <script src="https://kit.fontawesome.com/ada21263c2.js" crossorigin="anonymous"></script>
 @endsection
 @section('content')
 
-<div class="all-shops__container">
+<div class="read-reserves">
 
     <table>
         <thead>

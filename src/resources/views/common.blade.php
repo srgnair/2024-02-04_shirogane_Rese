@@ -42,6 +42,9 @@
                         <a href="{{ route('mypage') }}">Mypage</a>
                     </li>
                     <li>
+                        <a href="{{ route('payment.create') }}">Payment</a>
+                    </li>
+                    <li>
                         <a href="{{ route('addNewPartnerView') }}">Add new partner</a>
                     </li>
                 </ul>
@@ -76,6 +79,9 @@
                         <a href="{{ route('mypage') }}">Mypage</a>
                     </li>
                     <li>
+                        <a href="{{ route('payment.create') }}">Payment</a>
+                    </li>
+                    <li>
                         <a href="{{ route('shopAdminView') }}">Admin</a>
                     </li>
                 </ul>
@@ -108,6 +114,9 @@
                     </form>
                     <li>
                         <a href="{{ route('mypage') }}">Mypage</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('payment.create') }}">Payment</a>
                     </li>
                 </ul>
             </div>
