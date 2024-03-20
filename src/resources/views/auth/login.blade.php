@@ -8,8 +8,6 @@
 @endsection
 @section('content')
 
-<!-- ★にはアイコンを挿入する -->
-
 <div class="login-form">
     <div class="login-form__title">
         login
@@ -21,10 +19,17 @@
         @error('email')
         <p>{{$errors->first('email')}}</p>
         @enderror
-        @error('email')
+        @error('password')
         <p>{{$errors->first('password')}}</p>
         @enderror
 
+        @if (session('message'))
+        <div class="alert alert-info">
+            {{ session('message') }}
+        </div>
+        @endif
+
+        @if (!session('message'))
         <form class="form__wrapper" action="/login" method="POST">
             @csrf
             <div class="form">
@@ -46,6 +51,7 @@
             </div>
 
         </form>
+        @endif
     </div>
 </div>
 

@@ -7,8 +7,6 @@
 @endsection
 @section('content')
 
-<!-- リンク先を設定する -->
-
 <div class="reserve-complete">
 
     <div class="reserve-complete__title">

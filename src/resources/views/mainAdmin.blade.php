@@ -1,3 +1,0 @@
-mainadmin
-
-<!-- add new partner -->

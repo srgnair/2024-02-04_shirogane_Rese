@@ -8,8 +8,6 @@
 @endsection
 @section('content')
 
-<!-- ★にはアイコンを挿入する -->
-
 <div class="user-name">
     @if (Auth::check())
     <p>{{ Auth::user()->name }} さん</p>
@@ -18,7 +16,7 @@
 
 <div class="container">
     <div class="reserve">
-        予約状況
+        <p>予約状況</p>
 
         @foreach($reservations as $key => $reservation)
 
@@ -26,16 +24,12 @@
             <div class="reserve__title">
 
                 @if ($reservation->reserved_at < \Carbon\Carbon::now() && (!$reservation->shop->reviews || $reservation->shop->reviews->isEmpty()))
-                    <!-- 予約された日時が過去でかつレビューが未投稿の場合の処理 -->
                     <div class="reserve__edit">
-                        <!-- レビューボタン -->
                         <a href="{{ route('detail', ['id' =>  $reservation->shop->id]) }}"><i class="fa-regular fa-comment-dots fa-2xl" style="color: #ffffff;"></i></a>
                         <div class="description5">レビュー投稿</div>
                     </div>
                     @elseif ($reservation->reserved_at < \Carbon\Carbon::now() && $reservation->shop->reviews && !$reservation->shop->reviews->isEmpty())
-                        <!-- レビュー投稿済みの場合 -->
                         <div class="reserve__edit">
-                            <!-- チェックアイコン（マウスオーバーでコメント） -->
                             <i class="fa-solid fa-check fa-xl" style="color: #ffffff;"></i>
                             <div class="description5">レビュー投稿済みです</div>
                         </div>
@@ -44,7 +38,6 @@
 
                         @if ($reservation->reserved_at > \Carbon\Carbon::now())
                         <div class="reserve__edit">
-                            <!-- その他　予約編集ボタン -->
                             <a href="{{ route('detail', ['id' =>  $reservation->shop->id]) }}"><i class="fa-solid fa-clock fa-xl" style="color: #ffffff;"></i></a>
                             <div class="description5">予約編集</div>
                         </div>
@@ -63,7 +56,6 @@
                                     <div class="description5">予約を削除</div>
                                 </button>
                             </form>
-                            <!-- ×ボタンで削除 -->
                         </div>
             </div>
             <div class="reserve__item">
@@ -93,7 +85,7 @@
     </div>
 
     <div class="favorite">
-        お気に入り店舗
+        <p>お気に入り店舗</p>
 
         <div class="favorite__wrapper">
 

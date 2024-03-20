@@ -3,15 +3,15 @@
 <title>メール送信</title>
 @endsection
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/addNewShop.css') }}">
+<link rel="stylesheet" href="{{ asset('css/adminShopContents.css') }}">
 @endsection
 @section('content')
 
-<div class="addNewShop">
-    <div class="addNewShop__title">
+<div class="adminShopContents">
+    <div class="adminShopContents__title">
         send email
     </div>
-    <div class="addNewShop__content">
+    <div class="adminShopContents__content">
 
         <form class="form__wrapper" action="{{ route('sendEmail') }}" method="POST">
             @csrf
@@ -36,9 +36,15 @@
                     <textarea name="body" cols="50" rows="5" placeholder="こちらに本文を入力してください"></textarea>
                 </div>
 
+                @if(session('message'))
+                <div class="form__submit">
+                    {{ session('message') }}
+                </div>
+                @else
                 <div class="form__submit">
                     <button type="submit">メール送信</button>
                 </div>
+                @endif
 
             </div>
 

@@ -1,7 +1,11 @@
-/* 変更を加えたらthanks.cssも変更する */
-
 main {
     width: 1000px;
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        width: 500px;
+    }
 }
 
 .user-name {
@@ -14,12 +18,38 @@ main {
     justify-content: space-between;
 }
 
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 .reserve {
     margin: 30px 0 30px 0;
     font-weight: bold;
     text-align: left;
     width: 360px;
-    /* margin: 30px auto; */
+}
+
+.reserve p {
+    padding-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .reserve {
+        margin: 0 auto;
+        padding: 20px 0 20px;
+    }
+
+    .reserve p {
+        text-align: center;
+        margin: 0 auto;
+        padding: 20px 0 20px;
+    }
+
 }
 
 .reserve__card {
@@ -126,10 +156,25 @@ main {
     margin: 30px auto;
 }
 
+@media screen and (max-width: 768px) {
+    .favorite p {
+        text-align: center;
+    }
+}
+
 .favorite__wrapper {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .favorite {
+        font-weight: bold;
+        text-align: left;
+        width: 100%;
+        margin: 30px auto;
+    }
 }
 
 .favorite__card {
@@ -175,7 +220,6 @@ main {
     padding: 5px 15px;
     background: #6E85B7;
     display: inline-block;
-    /* 要素の文字数に応じて幅が変更されるためにinline-blockを指定 */
     color: #fff;
     font-size: 14px;
     font-weight: bold;

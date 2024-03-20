@@ -3,7 +3,7 @@
 <title>決済ページ</title>
 @endsection
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/addNewShop.css') }}">
+<link rel="stylesheet" href="{{ asset('css/payment.css') }}">
 @endsection
 @section('content')
 
@@ -16,11 +16,11 @@
     </div>
     @endif
     <div class="p-5">
-        <div class="addNewShop">
-            <div class="addNewShop__title">
+        <div class="payment">
+            <div class="payment__title">
                 決済
             </div>
-            <div class="addNewShop__content">
+            <div class="payment__content">
                 <form id="card-form" action="{{ route('payment.store') }}" method="POST">
                     @csrf
                     <div>

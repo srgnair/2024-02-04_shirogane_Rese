@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use App\Notifications\CustomVerifyEmail;
+
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -29,18 +29,10 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Reserve::class);
     }
 
-    //     このlike_shops()メソッドを使うと、ユーザーがブックマークした記事リソースに容易にアクセスできるようになります。例えば、自分がブックマークした記事の一覧を取得したいならば次のように書きます。
-
-    // （例）
-
-    // $user = \Auth::user();
-    // $articles = $user->like_shops()->get();
-    // https://newmonz.jp/lesson/laravel-basic/chapter-9
-
-    // public function is_like($shop_id)
-    // {
-    //     return $this->likes()->where('shop_id', $shop_id)->exists();
-    // }
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
 
     public function is_like($shop_id)
     {
@@ -56,7 +48,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'name',
         'email',
         'password',
-        'role'
+        'role',
+        'email_verified_at'
     ];
 
     /**
@@ -78,8 +71,5 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    // public function sendEmailVerificationNotification()
-    // {
-    //     $this->notify(new CustomVerifyEmail());
-    // }
+
 }

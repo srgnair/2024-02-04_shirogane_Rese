@@ -1,5 +1,3 @@
-<!-- add new shop / update shop / read reserves -->
-
 @extends('common')
 @section('title')
 <title>admin for partner</title>
@@ -24,12 +22,17 @@
         </li>
         <li>
             <div class="shop-admin__link">
-                <a href="{{ route('readReserves') }}">read reserves</a>
+                <a href="{{ route('showReserves') }}">show reserves</a>
             </div>
         </li>
         <li>
             <div class="shop-admin__link">
                 <a href="{{ route('sendEmailView') }}">send Email</a>
+            </div>
+        </li>
+        <li>
+            <div class="shop-admin__link">
+                <a href="{{ route('showQrReader') }}">show QRcode reader</a>
             </div>
         </li>
     </ul>

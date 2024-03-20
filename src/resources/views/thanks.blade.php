@@ -7,8 +7,6 @@
 @endsection
 @section('content')
 
-<!-- ★にはアイコンを挿入する -->
-
 <div class="register-complete">
 
     <div class="register-complete__title">

@@ -4,8 +4,6 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
-use Illuminate\Support\Facades\Auth;
-
 
 class ReserveRequest extends FormRequest
 {
@@ -30,8 +28,8 @@ class ReserveRequest extends FormRequest
             'reserved_date' => [
                 'required',
                 'date',
-                'after_or_equal:' . now()->addDay()->format('Y-m-d'), // 明日以降の日付
-                'before_or_equal:' . now()->addMonth()->format('Y-m-d'), // 1ヶ月以内の日付
+                'after_or_equal:' . now()->addDay()->format('Y-m-d'), 
+                'before_or_equal:' . now()->addMonth()->format('Y-m-d'),
                 Rule::unique('reserves')->where(function ($query) {
                     return $query->where('reserved_date', $this->input('reserved_date'))
                         ->where('user_id', auth()->id());

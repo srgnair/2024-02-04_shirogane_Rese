@@ -3,23 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\StorePaymentRequest;
 use Exception;
 
 class PaymentController extends Controller
 {
-    /**
-     * 決済フォーム表示
-     */
-    public function create()
+    public function paymentView()
     {
         return view('payment.create');
     }
 
-    /**
-     * 決済実行
-     */
-    public function store(Request $request)
+    public function payment(Request $request)
     {
         \Stripe\Stripe::setApiKey(config('stripe.stripe_secret_key'));
 

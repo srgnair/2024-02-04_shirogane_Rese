@@ -2,11 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use App\Http\Requests\LoginRequest;
 
 class LoginController extends Controller
 {
@@ -22,13 +18,8 @@ class LoginController extends Controller
         return redirect()->route('login');
     }
 
-    public function shopAdminView()
+    public function verificationRequiredView()
     {
-        return view('shopAdmin');
-    }
-
-    public function mainAdminView()
-    {
-        return view('mainAdmin');
+        return view('verificationRequired');
     }
 }

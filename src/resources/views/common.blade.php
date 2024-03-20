@@ -45,7 +45,7 @@
                         <a href="{{ route('payment.create') }}">Payment</a>
                     </li>
                     <li>
-                        <a href="{{ route('addNewPartnerView') }}">Add new partner</a>
+                        <a href="{{ route('addNewPartnerView') }}">Add partner</a>
                     </li>
                 </ul>
             </div>

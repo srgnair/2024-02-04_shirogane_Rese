@@ -26,8 +26,8 @@ class AddShopAdminIdToShopsTable extends Migration
      */
     public function down()
     {
-        Schema::table('posts', function (Blueprint $table) {
-            //
-        });
+        Schema::table('shops', function (Blueprint $table) {
+            $table->dropColumn('shop_admin_id');
+        }); 
     }
 }

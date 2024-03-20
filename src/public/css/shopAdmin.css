@@ -1,3 +1,9 @@
-.shop-admin {
-    
+main {
+    width: 1000px;
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        width: 500px;
+    }
 }

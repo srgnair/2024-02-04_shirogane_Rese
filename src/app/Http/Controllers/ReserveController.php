@@ -3,13 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
 use App\Models\Shop;
 use App\Models\Reserve;
-use App\Models\Review;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Database\Eloquent\Model;
-use Carbon\Carbon;
 use App\Http\Requests\ReserveRequest;
 
 class ReserveController extends Controller
@@ -28,24 +24,20 @@ class ReserveController extends Controller
         return redirect('reserve');
     }
 
-    public function reserveEdit($shop_id, Request $request)
-    {
-        // フォームデータから不要な_tokenキーを削除
-        $reserveData = $request->except('_token');
-
-        // $shop_idを使用して対象の店舗を取得し、その店舗に紐づく予約レコードを更新する
-        $shop = Shop::findOrFail($shop_id);
-        $shop->reserves()->update($reserveData);
-
-        // リダイレクト
-        return redirect()->route('mypage');
-    }
-
-    public function reserveComplete()
+    public function reserveCompleteView()
     {
         return view('completeReserve');
     }
 
+    public function reserveEdit($shop_id, Request $request)
+    {
+        $reserveData = $request->except('_token');
+
+        $shop = Shop::findOrFail($shop_id);
+        $shop->reserves()->update($reserveData);
+
+        return redirect()->route('mypage');
+    }
 
     public function reserveDelete($id)
     {

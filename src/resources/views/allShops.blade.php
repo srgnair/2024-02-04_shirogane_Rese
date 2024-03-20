@@ -37,8 +37,6 @@
 
         </form>
 
-        <!-- <input type="search" name="search"> -->
-
     </div>
 
     <div class="all-shops">

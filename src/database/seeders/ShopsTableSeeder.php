@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use App\Models\Shop;
 
 class ShopsTableSeeder extends Seeder
 {
@@ -14,29 +13,9 @@ class ShopsTableSeeder extends Seeder
      * @return void
      */
 
-    // コントローラにマッピングが必要
-    //     public function index()
-    //     {
-    //         // エリアとジャンルのマッピングを定義
-    //         $areas = [
-    //             1 => '東京都',
-    //             2 => '大阪府',
-    //             // 他のエリアに対するマッピングも定義する
-    //         ];
-
-    //         $genres = [
-    //             1 => '和食',
-    //             2 => '洋食',
-    //             // 他のジャンルに対するマッピングも定義する
-    //         ];
-
-    //         // 他の処理とともにビューに渡すなどの操作を行う
-    //     }
 
     public function run()
     {
-        // Shop::truncate();
-
         DB::table('shops')->insert([
             [
                 'shop_name' => '仙人',

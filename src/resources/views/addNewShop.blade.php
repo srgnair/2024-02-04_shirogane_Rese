@@ -3,29 +3,27 @@
 <title>店舗追加</title>
 @endsection
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/addNewShop.css') }}">
+<link rel="stylesheet" href="{{ asset('css/adminShopContents.css') }}">
 @endsection
 @section('content')
 
-<div class="addNewShop">
+<div class="adminShopContents">
 
-    <div class="addNewShop">
-        <div class="addNewShop__title">
+    <div class="adminShopContents">
+        <div class="adminShopContents__title">
             add new shop
         </div>
-        <div class="addNewShop__content">
+        <div class="adminShopContents__content">
 
             <form class="form__wrapper" action="{{ route('addNewShop') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form">
 
                     <div class="form__item">
-                        <label for="shop_name">ショップ名：</label>
                         <input class="form__item--control" type="text" name="shop_name" value="{{ old('name') }}" placeholder="shop name" />
                     </div>
 
                     <div class="form__item">
-                        <label for="image">イメージ：</label>
                         <input class="form__item--control" type="file" name="image" value="{{ old('image') }}" placeholder="image" />
                     </div>
 
@@ -50,14 +48,18 @@
                     </div>
 
                     <div class="form__item">
-                        <div class="form__item--textarea">
-                            <textarea id="inputIntroduction" class="radioform__item--comment" type="text" name="introduction" value="{{ old('introduction') }}" placeholder="こちらに紹介文を入力してください"></textarea>
-                        </div>
+                        <textarea id="inputIntroduction" class="radioform__item--comment" type="text" name="introduction" value="{{ old('introduction') }}" placeholder="こちらに紹介文を入力してください"></textarea>
                     </div>
 
+                    @if(session('message'))
+                    <div class="form__submit">
+                        {{ session('message') }}
+                    </div>
+                    @else
                     <div class="form__submit">
                         <button type="submit">登録</button>
                     </div>
+                    @endif
 
                 </div>
 

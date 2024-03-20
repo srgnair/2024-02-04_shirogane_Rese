@@ -1,5 +1,3 @@
-/* 変更を加えたらthanks.cssも変更する */
-
 .reserve-complete {
     width: 360px;
     margin: 100px auto;
@@ -20,7 +18,6 @@
     padding: 5px 15px;
     background: #6E85B7;
     display: inline-block;
-    /* 要素の文字数に応じて幅が変更されるためにinline-blockを指定 */
     color: #fff;
     font-size: 14px;
     font-weight: bold;

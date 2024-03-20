@@ -1,13 +1,29 @@
-.addNewShop {
+main {
+    width: 1000px;
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        width: 300px;
+    }
+}
+
+.adminShopContents {
     width: 800px;
     margin: 100px auto;
-    /* padding: 80px 0px; */
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
     background-color: #6E85B7;
     border-radius: 3px;
 }
 
-.addNewShop__title {
+@media screen and (max-width: 768px) {
+    .adminShopContents {
+        width: 100%;
+        margin: 50px auto;
+    }
+}
+
+.adminShopContents__title {
     font-weight: bold;
     color: #fff;
     padding: 10px 10px 10px 20px;
@@ -15,10 +31,18 @@
     letter-spacing: 1px;
 }
 
-.addNewShop__content {
+.adminShopContents__content {
     background: #fff;
     padding: 30px 100px;
     border-radius: 0 0 3px 3px;
+}
+
+@media screen and (max-width: 768px) {
+    .adminShopContents__content {
+        background: #fff;
+        padding: 20px;
+        border-radius: 0 0 3px 3px;
+    }
 }
 
 .form__item {
@@ -60,7 +84,6 @@
     padding: 5px 15px;
     background: #6E85B7;
     display: inline-block;
-    /* 要素の文字数に応じて幅が変更されるためにinline-blockを指定 */
     color: #fff;
     font-size: 14px;
     font-weight: bold;
@@ -69,10 +92,10 @@
     cursor: pointer;
 }
 
-.addNewShop__content {
+.adminShopContents__content {
     text-align: left;
 }
 
-.addNewShop__content div {
+.adminShopContents__content div {
     margin: 10px;
 }

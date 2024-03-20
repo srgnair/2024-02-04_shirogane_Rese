@@ -26,9 +26,7 @@ class LoginRequest extends FormRequest
         return [
             'email' => 'required | max:100 | email',
             'password' => 'required | min:8 | max:100 | string',
+            'email_verified_at' => 'required'
         ];
     }
 }
-
-// メール認証で使用
-// 'email_verified_at' => 'required'

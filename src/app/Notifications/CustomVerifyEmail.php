@@ -34,6 +34,17 @@ class CustomVerifyEmail extends VerifyEmail
         return ['mail'];
     }
 
+    // /**
+    //  * Get the mail representation of the notification.
+    //  *
+    //  * @param  mixed  $notifiable
+    //  * @return \Illuminate\Notifications\Messages\MailMessage
+    //  */
+    // public function toMail($notifiable)
+    // {
+    //     return (new MailMessage)->markdown('emails.verify_email');
+    // }
+
     /**
      * Get the mail representation of the notification.
      *
@@ -42,7 +53,9 @@ class CustomVerifyEmail extends VerifyEmail
      */
     public function toMail($notifiable)
     {
-        return (new MailMessage)->markdown('emails.verify_email');
+        return (new MailMessage)
+            ->subject('Custom Verify Email Subject')
+            ->view('emails.verify_email', ['url' => $this->verificationUrl($notifiable)]);
     }
 
     /**

@@ -9,7 +9,6 @@ class Shop extends Model
 {
     use HasFactory;
 
-    // モデルの属性に対するアクセサを定義
     public function getAreaAttribute($value)
     {
         $areas = [

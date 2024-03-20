@@ -1,3 +1,13 @@
+main {
+    width: 1000px;
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        width: 500px;
+    }
+}
+
 .read-reserves {
     width: 800px;
     margin: 100px auto;
@@ -6,10 +16,19 @@
     border-radius: 3px;
 }
 
+@media screen and (max-width: 768px) {
+    .read-reserves {
+        overflow-x: auto;
+        width: 100%;
+    }
+}
+
 .read-reserves th {
     padding: 30px;
+    white-space: nowrap;
 }
 
 .read-reserves td {
     padding-bottom: 10px;
+    white-space: nowrap;
 }

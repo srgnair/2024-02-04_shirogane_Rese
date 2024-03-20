@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Laravel\Fortify\Fortify;
+use Illuminate\Support\Facades\Session;
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -37,6 +38,15 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::loginView(function () {
             return view('auth.login');
         });
+
+        Fortify::VerifyEmailView(function () {
+            return view('verificationRequired');
+        });
+
+        // Fortify::VerifyEmailView(function () {
+        //     Session::flash('message', 'メール認証を完了してください');
+        //     return view('auth.login');
+        // });
 
         RateLimiter::for('login', function (Request $request) {
             $email = (string) $request->email;
