@@ -63,8 +63,10 @@ coachtechブランドのアイテムを出品するために作成しました�
 | サーバー       | nginx:1.21.1 |
 
 ## テーブル設計
-####  <img width="540" alt="スクリーンショット 2024-06-03 131314](https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/d8dd0d97-cdb9-42e2-a67f-8a16a716b2c5">
-  
+####  <img width="540" alt="スクリーンショット 2024-06-03 131314" src="https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/d8dd0d97-cdb9-42e2-a67f-8a16a716b2c5">
+
+####  <img width="540" alt="スクリーンショット 2024-03-21 064822" src="https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/10f2764a-7c07-4dc2-a9ec-71566c1ce301">
+
 ## ER図
 ####  <img width="540" src="https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/59c8810c-7d7e-4ba7-a68b-a315706ac4ac">
 
