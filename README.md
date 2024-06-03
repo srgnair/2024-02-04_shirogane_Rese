@@ -50,3 +50,57 @@ coachtechブランドのアイテムを出品するために作成しました�
 - 発送登録と到着登録ができます。
 #### 出品者の評価・閲覧
 - 取引終了後にお互いの評価ができます。
+  
+## 使用技術
+
+| カテゴリ       | 技術  |
+| :------------- | :------------ |
+| フレームワーク | Laravel Framework version:11.4.0 |
+| フロントエンド | blade / CSS |
+| バックエンド   | php:8.3.3 | nginx:1.25.4
+| データベース   | mySQL:8.0.36 / phpMyAdmin:5.2.1 | mailhog:latest
+| 認証           | Fortify |
+| サーバー       | nginx:1.21.1 |
+
+## テーブル設計
+####  <img width="540" alt="スクリーンショット 2024-03-21 064822" src="https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/10f2764a-7c07-4dc2-a9ec-71566c1ce301">
+  
+####  <img width="540" alt="スクリーンショット 2024-03-21 064851" src="https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/b6250f58-618a-4594-b52b-f32e38743364">
+  
+####  <img width="540" alt="スクリーンショット 2024-03-21 064924" src="https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/af37892e-3c5b-4893-9ed9-b5e65511d287">
+
+####  <img width="540" alt="スクリーンショット 2024-03-21 064931" src="https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/feb7485f-0c5c-431a-b2bb-ed81f55df677">
+
+####  <img width="540" alt="スクリーンショット 2024-03-21 064946" src="https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/525cadfb-5cd1-48dd-8039-72c5acdb9bf3">
+  
+## ER図
+####  <img width="540" src="https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/59c8810c-7d7e-4ba7-a68b-a315706ac4ac">
+
+## 環境構築
+
+#### ディレクトリ構成
+atte  
+├── docker  
+│&emsp;&emsp;├── mysql  
+│&emsp;&emsp;│&emsp;&emsp;├── data  
+│&emsp;&emsp;│&emsp;&emsp;└── my.cnf  
+│&emsp;&emsp;├── nginx  
+│&emsp;&emsp;│&emsp;&emsp;└── default.conf  
+│&emsp;&emsp;└── php  
+│&emsp;&emsp;&emsp;&emsp;&emsp;├── Dockerfile  
+│&emsp;&emsp;&emsp;&emsp;&emsp;└── php.ini  
+├── docker-compose.yml  
+└── src  
+
+#### パッケージのインストール
+$ composer -v
+
+#### プロジェクトの作成
+$ composer create-project "laravel/laravel=8.*" . --prefer-dist
+
+下記のローカル環境にアクセス
+http://localhost/
+
+## ほかに記載すること
+全ての機能は完成できませんでした。
+
