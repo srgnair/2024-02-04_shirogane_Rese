@@ -63,15 +63,7 @@ coachtechブランドのアイテムを出品するために作成しました�
 | サーバー       | nginx:1.21.1 |
 
 ## テーブル設計
-####  <img width="540" alt="スクリーンショット 2024-03-21 064822" src="https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/10f2764a-7c07-4dc2-a9ec-71566c1ce301">
-  
-####  <img width="540" alt="スクリーンショット 2024-03-21 064851" src="https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/b6250f58-618a-4594-b52b-f32e38743364">
-  
-####  <img width="540" alt="スクリーンショット 2024-03-21 064924" src="https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/af37892e-3c5b-4893-9ed9-b5e65511d287">
-
-####  <img width="540" alt="スクリーンショット 2024-03-21 064931" src="https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/feb7485f-0c5c-431a-b2bb-ed81f55df677">
-
-####  <img width="540" alt="スクリーンショット 2024-03-21 064946" src="https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/525cadfb-5cd1-48dd-8039-72c5acdb9bf3">
+####  <img width="540" alt="スクリーンショット 2024-06-03 131314](https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/d8dd0d97-cdb9-42e2-a67f-8a16a716b2c5">
   
 ## ER図
 ####  <img width="540" src="https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/59c8810c-7d7e-4ba7-a68b-a315706ac4ac">
