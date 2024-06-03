@@ -71,8 +71,6 @@ coachtechブランドのアイテムを出品するために作成しました�
 ####  <img width="540" alt="スクリーンショット 2024-06-03 131521" src="https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/a3b0caf8-d848-44e0-bec7-54f40b11c487">
 
 ## ER図
-####  <img width="540" src="https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/59c8810c-7d7e-4ba7-a68b-a315706ac4ac">
-
 ####  <img width="540" src="(https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/8b447129-b518-4080-b149-c8aa33489efa">
 
 ## 環境構築
