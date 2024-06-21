@@ -1,0 +1,30 @@
+.reserve-complete {
+    width: 360px;
+    margin: 100px auto;
+    padding: 80px 0px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+.reserve-complete__title {
+    font-weight: bold;
+    color: black;
+    padding-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.reserve-complete__link {
+    padding: 5px 15px;
+    background: #6E85B7;
+    display: inline-block;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 3px;
+    letter-spacing: 1px;
+}
+
+.reserve-complete__link a{
+    color: #fff;
+}

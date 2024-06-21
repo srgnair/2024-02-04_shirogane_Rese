@@ -1,0 +1,238 @@
+main {
+    width: 1000px;
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        width: 500px;
+    }
+}
+
+.user-name {
+    margin: 0 auto;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.reserve {
+    margin: 30px 0 30px 0;
+    font-weight: bold;
+    text-align: left;
+    width: 360px;
+}
+
+.reserve p {
+    padding-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .reserve {
+        margin: 0 auto;
+        padding: 20px 0 20px;
+    }
+
+    .reserve p {
+        text-align: center;
+        margin: 0 auto;
+        padding: 20px 0 20px;
+    }
+
+}
+
+.reserve__card {
+    font-weight: normal;
+    margin-top: 10px;
+    padding-top: 5px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+    background-color: #6E85B7;
+    border-radius: 3px;
+    color: #fff;
+}
+
+.reserve__title--text {
+    display: flex;
+}
+
+.reserve__title--text p {
+    line-height: 10px;
+    text-align: center;
+}
+
+.reserve__title--text i {
+    margin: 15px 20px 0 0;
+}
+
+.reserve__title {
+    display: flex;
+    justify-content: space-between;
+    font-weight: normal;
+    color: #fff;
+    padding: 10px 10px 10px 20px;
+    text-align: left;
+    letter-spacing: 1px;
+
+}
+
+.reserve__title--close {
+    padding-right: 10px;
+}
+
+.reserve__title--close button {
+    border: none;
+    outline: none;
+    background: #6E85B7;
+    cursor: pointer;
+}
+
+.reserve__item {
+    padding: 20px;
+    border-radius: 0 0 3px 3px;
+}
+
+.reserve__item th {
+    font-weight: normal;
+    padding: 0 20px 10px 0;
+}
+
+.reserve__item td {
+    padding-bottom: 10px;
+}
+
+.reserve__edit {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.reserve__edit img {
+    width: 20px;
+}
+
+.description5 {
+    display: none;
+    position: absolute;
+    padding: 10px;
+    font-size: 12px;
+    line-height: 1.6em;
+    color: #fff;
+    border-radius: 5px;
+    background: #000;
+    width: 100px;
+}
+
+.description5:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    border: 15px solid transparent;
+    border-top: 15px solid #000;
+    margin-left: -15px;
+}
+
+.reserve__edit:hover .description5 {
+    display: inline-block;
+    top: -75px;
+    left: -50px;
+}
+
+.favorite {
+    font-weight: bold;
+    text-align: left;
+    width: 50%;
+    margin: 30px auto;
+}
+
+@media screen and (max-width: 768px) {
+    .favorite p {
+        text-align: center;
+    }
+}
+
+.favorite__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .favorite {
+        font-weight: bold;
+        text-align: left;
+        width: 100%;
+        margin: 30px auto;
+    }
+}
+
+.favorite__card {
+    text-align: left;
+    width: 45%;
+    margin: 10px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+.shop-name {
+    font-size: large;
+}
+
+.favorite__card--img img {
+    width: 100%;
+    border-radius: 3px 3px 0 0;
+}
+
+.favorite__card--content {
+    padding: 15px 25px;
+}
+
+.favorite__card--tag {
+    display: flex;
+    justify-content: left;
+    font-weight: normal;
+}
+
+.shop-area {
+    padding-right: 10px;
+}
+
+.favorite__card--footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.detail-button a {
+    border: none;
+    outline: none;
+    margin-top: 10px;
+    padding: 5px 15px;
+    background: #6E85B7;
+    display: inline-block;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 3px;
+    letter-spacing: 1px;
+}
+
+.heart {
+    padding: 5px;
+}
+
+.heart button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
