@@ -53,7 +53,21 @@
                 <div class="review__right--title">
                     体験を評価してください
                 </div>
-
+                @error('user_id')
+                <p>{{$errors->first('user_id')}}</p>
+                @enderror
+                @error('shop_id')
+                <p>{{$errors->first('shop_id')}}</p>
+                @enderror
+                @error('star')
+                <p>{{$errors->first('star')}}</p>
+                @enderror
+                @error('comment')
+                <p>{{$errors->first('comment')}}</p>
+                @enderror
+                @error('image')
+                <p>{{$errors->first('image')}}</p>
+                @enderror
                 <div id="app">
                     <star-rating v-model="rating" active-color="#3f5fec"></star-rating>
                     <input type="hidden" name="star" :value="rating" v-model="rating">
@@ -94,14 +108,5 @@
         <input type="hidden" name="shop_id" value="{{ $shop->id }}">
         <button type="submit">口コミを投稿</button>
     </div>
-    @error('star')
-    <p>{{$errors->first('star')}}</p>
-    @enderror
-    @error('comment')
-    <p>{{$errors->first('comment')}}</p>
-    @enderror
-    @error('image')
-    <p>{{$errors->first('image')}}</p>
-    @enderror
 </form>
 @endsection
