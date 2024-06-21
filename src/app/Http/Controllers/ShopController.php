@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Shop;
 use App\Models\Reserve;
 use App\Models\Review;
+use Illuminate\Support\Facades\Auth;
 
 class ShopController extends Controller
 {
@@ -37,10 +38,12 @@ class ShopController extends Controller
     public function detailView($id, Request $request)
     {
         $shop = Shop::find($id);
+        $reviews = Review::where('shop_id', $shop->id)->get();
+        $reviewExists = $reviews->contains('user_id', Auth::id());
 
         $existingReserve = Reserve::where('shop_id', $shop->id)->exists();
         $existingReview = Review::where('shop_id', $shop->id)->exists();
 
-        return view('detailShop', compact('shop', 'existingReserve', 'existingReview'));
+        return view('detailShop', compact('shop', 'existingReserve', 'existingReview', 'reviews', 'reviewExists'));
     }
 }

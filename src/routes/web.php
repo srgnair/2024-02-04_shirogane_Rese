@@ -44,6 +44,12 @@ Route::middleware(['web', 'auth', 'verified'])->group(
 
         Route::get('/mypage', [MypageController::class, 'mypageView'])->name('mypage');
 
+        Route::get('/post_review/{shop_id}', [ReviewController::class, 'postReviewView'])->name('postReviewView');
+        Route::post('/post_review/{shop_id}', [ReviewController::class, 'postReview'])->name('postReview');
+        Route::delete('/delete_review/{review_id}/{shop_id}', [ReviewController::class, 'deleteReview'])->name('deleteReview');
+        Route::get('/edit_review/{review_id}/{shop_id}', [ReviewController::class, 'editReviewView'])->name('editReviewView');
+        Route::put('/edit_review/{review_id}/{shop_id}', [ReviewController::class, 'update'])->name('editReview');
+
         Route::post('/{shop_id}', [LikeController::class, 'like'])->name('like');
         Route::delete('/{shop_id}', [LikeController::class, 'deleteLike'])->name('deleteLike');
 
@@ -51,8 +57,6 @@ Route::middleware(['web', 'auth', 'verified'])->group(
         Route::post('/detail/{shop_id}/edit', [ReserveController::class, 'reserveEdit'])->name('reserveEdit');
         Route::get('/reserve', [ReserveController::class, 'reserveCompleteView'])->name('completeReserve');
         Route::delete('/mypage/{id}', [ReserveController::class, 'reserveDelete'])->name('delete');
-
-        Route::post('/detail/review', [ReviewController::class, 'postReview'])->name('review');
 
         Route::get('/admin/shop', [AdminController::class, 'shopAdminView'])->name('shopAdminView');
 
