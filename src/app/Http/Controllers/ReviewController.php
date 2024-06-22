@@ -9,6 +9,7 @@ use App\Models\Shop;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ReviewRequest;
 use App\Rules\CanDeleteReview;
+use Illuminate\Support\Facades\Storage;
 
 class ReviewController extends Controller
 {
@@ -68,37 +69,38 @@ class ReviewController extends Controller
         $rating = $review->star;
         $shop = Shop::findOrFail($shop_id);
 
-        return view('editReview', compact('review', 'shop','rating'));
+        return view('editReview', compact('review', 'shop', 'rating'));
     }
 
     public function editReview(ReviewRequest $request, $review_id, $shop_id)
     {
         $user_id = Auth::id();
 
+        $reviewData = $request->except('_token');
+        $reviewData['user_id'] = $user_id;
+        $reviewData['shop_id'] = $shop_id;
+        $reviewData['star'] = $request->star;
+        $reviewData['comment'] = $request->comment;
+
         $review = Review::where('id', $review_id)->where('user_id', $user_id)->where('shop_id', $shop_id)->firstOrFail();
 
-        $validatedData = $request->validate([
-            'star' => 'required|integer|min:1|max:5',
-            'comment' => 'required|string|max:400',
-            'image' => 'nullable|image|mimes:jpeg,png|max:2048'
-        ]);
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $path = $image->store('review_image', 'public');
 
-        $reviewData = $validatedData;
+            foreach ($review->images as $existingImage) {
+                Storage::disk('public')->delete($existingImage->image_path);
+                $existingImage->delete();
+            }
 
-        if ($request->hasFile('new_image')) {
-            $file = $request->file('new_image');
-            $path = $file->store('review_image', 'public');
-
-            // 新しい画像を保存する前に、古い画像を削除する場合はここで行う（例として、1枚のみの前提であれば）
-            $review->images()->delete(); // すべての関連する画像を削除する例
-
-            $review->images()->create([
+            ReviewImage::create([
+                'review_id' => $review_id,
                 'image_path' => $path,
             ]);
-
-            $review->update($reviewData);
         }
 
-        return redirect()->route('detail', compact('shop_id'))->with('success', 'レビューが更新されました。');
+        $review->update($reviewData);
+
+        return redirect()->route('detail', compact('shop_id'))->with('message', '登録されました！');
     }
 }

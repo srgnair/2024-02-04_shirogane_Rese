@@ -93,7 +93,7 @@
                             <input type="hidden" name="existing_images[]" value="{{ $image->id }}">
                         </div>
                         @endforeach
-                        <div>新しい画像</div>
+                        <p>更新画像は以下に表示されます</p>
                         @endif
                     </div>
                 </div>

@@ -256,3 +256,8 @@ form {
 #fileInput{
     border: none;
 }
+
+#previewArea p{
+    margin: 20px 0;
+    font-size: 16px;
+}
