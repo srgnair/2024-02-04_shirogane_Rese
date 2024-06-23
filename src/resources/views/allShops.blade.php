@@ -17,7 +17,7 @@
 
             @if(Auth::user()->role === 'user' | NULL)
             <select name="sort_by" id="sort_by">
-                <option value="default">選択してください</option>
+                <option value="default">並び替え：</option>
                 <option value="random">ランダム</option>
                 <option value="high">評価が高い順</option>
                 <option value="low">評価が低い順</option>
