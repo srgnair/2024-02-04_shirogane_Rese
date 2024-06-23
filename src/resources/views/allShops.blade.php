@@ -14,6 +14,13 @@
 
         <form action="{{ route('home') }}" method="GET">
             @csrf
+            <label for="sort_by">並び替え：</label>
+            <select name="sort_by" id="sort_by">
+                <option value="default">選択してください</option>
+                <option value="random">ランダム</option>
+                <option value="high">評価が高い順</option>
+                <option value="low">評価が低い順</option>
+            </select>
 
             <select name="area">
                 <option value="">All area</option>

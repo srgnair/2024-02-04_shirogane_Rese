@@ -15,6 +15,7 @@ class ShopController extends Controller
         $keyword = $request->input('keyword');
         $area = $request->input('area');
         $genre = $request->input('genre');
+        $sort_by = $request->input('sort_by', 'id');
 
         $query = Shop::query();
 
@@ -30,7 +31,25 @@ class ShopController extends Controller
             $query->where('genre', $genre);
         }
 
-        $shops = $query->get();
+        if ($sort_by == 'random') {
+            $query->inRandomOrder();
+        } elseif ($sort_by == 'high') {
+            $query->leftJoin('reviews', 'shops.id', '=', 'reviews.shop_id')
+                ->selectRaw('shops.*, AVG(reviews.star) as avg_star')
+                ->groupBy('shops.id')
+                ->orderByRaw('ISNULL(avg_star), avg_star DESC');
+        } elseif ($sort_by == 'low') {
+            $query->leftJoin('reviews', 'shops.id', '=', 'reviews.shop_id')
+                ->selectRaw('shops.*, AVG(reviews.star) as avg_star')
+                ->groupBy('shops.id')
+                ->orderByRaw('ISNULL(avg_star), avg_star ASC');
+        } elseif ($sort_by == 'default') {
+            $query->orderBy('id', 'asc');
+        } else {
+            //
+        }
+
+        $shops = $query->paginate(100);
 
         return view('allShops', compact('shops'));
     }

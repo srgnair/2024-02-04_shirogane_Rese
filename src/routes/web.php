@@ -27,8 +27,6 @@ use App\Http\Controllers\AdminReservesController;
 |
 */
 
-Route::get('/phpinfo', [UserController::class, 'phpinfo']);
-
 Route::get('/register', [UserController::class, 'registerView']);
 Route::post('/register', [UserController::class, 'register'])->name('register');
 Route::get('/thanks', [UserController::class, 'registerThanks'])->name('thanks');
