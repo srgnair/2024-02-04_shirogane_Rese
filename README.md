@@ -48,49 +48,22 @@ Rese（リーズ）
 
 | カテゴリ       | 技術  |
 | :------------- | :------------ |
-| フレームワーク | Laravel Framework version:11.4.0 |
+| フレームワーク | Laravel Framework 8.83.27 |
 | フロントエンド | blade / CSS |
-| バックエンド   | php:8.3.3 | nginx:1.25.4
+| バックエンド   | php 7.4.9 | 
 | データベース   | mySQL:8.0.36 / phpMyAdmin:5.2.1 | mailhog:latest
 | 認証           | Fortify |
 | サーバー       | nginx:1.21.1 |
 
 ## テーブル設計
-####  <img width="540" alt="スクリーンショット 2024-06-03 131314" src="https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/d8dd0d97-cdb9-42e2-a67f-8a16a716b2c5">
-####  <img width="540" alt="スクリーンショット 2024-06-03 131354" src="https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/adac0432-4870-4fa2-ac74-e91703f67f35">
-####  <img width="540" alt="スクリーンショット 2024-06-03 131435" src="https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/788a57e0-a46f-4bc5-a6cc-2b78ee9a1a77">
-####  <img width="540" alt="スクリーンショット 2024-06-03 131451" src="https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/c7fa44ec-b779-499d-8886-8299dc294766">
-####  <img width="540" alt="スクリーンショット 2024-06-03 131505" src="https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/f3041899-cd5c-4855-86dd-5dc52476f11c">
-####  <img width="540" alt="スクリーンショット 2024-06-03 131521" src="https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/a3b0caf8-d848-44e0-bec7-54f40b11c487">
+####  <img width="540" alt="スクリーンショット 2024-06-03 131314" src="https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/0d2af200-be1d-4137-95da-ad6888578934">
+
+####  <img width="540" alt="スクリーンショット 2024-06-23 153828" src="https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/07f870bf-1a8e-4795-b466-e8ad08aaa322">
+
+####  <img width="540" alt="スクリーンショット 2024-06-23 153840" src="https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/17480c2c-198f-450c-b791-7c7223d0dd98">
+####  <img width="540" alt="スクリーンショット 2024-06-23 153854" src="https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/96f90b4a-b7c3-4c83-ad6f-677ced5c1ddb">
 
 ## ER図
-####  <img width="540" src="https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/8b447129-b518-4080-b149-c8aa33489efa">
+####  <img width="540" src="https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/af73b8b4-8052-466a-ad8c-e818b92e570b">
 
-## 環境構築
-
-#### ディレクトリ構成
-atte  
-├── docker  
-│&emsp;&emsp;├── mysql  
-│&emsp;&emsp;│&emsp;&emsp;├── data  
-│&emsp;&emsp;│&emsp;&emsp;└── my.cnf  
-│&emsp;&emsp;├── nginx  
-│&emsp;&emsp;│&emsp;&emsp;└── default.conf  
-│&emsp;&emsp;└── php  
-│&emsp;&emsp;&emsp;&emsp;&emsp;├── Dockerfile  
-│&emsp;&emsp;&emsp;&emsp;&emsp;└── php.ini  
-├── docker-compose.yml  
-└── src  
-
-#### パッケージのインストール
-$ composer -v
-
-#### プロジェクトの作成
-$ composer create-project "laravel/laravel=8.*" . --prefer-dist
-
-下記のローカル環境にアクセス
-http://localhost/
-
-## ほかに記載すること
-全ての機能は完成できませんでした。
 
