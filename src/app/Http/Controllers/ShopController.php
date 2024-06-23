@@ -46,7 +46,7 @@ class ShopController extends Controller
         } elseif ($sort_by == 'default') {
             $query->orderBy('id', 'asc');
         } else {
-            //
+            $query->orderBy('id', 'asc');
         }
 
         $shops = $query->paginate(100);
