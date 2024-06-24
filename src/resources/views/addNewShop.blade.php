@@ -8,17 +8,38 @@
 @section('content')
 
 <div class="adminShopContents">
-
+    @if(session('message'))
+    <div class="alert alert-success">
+        {{ session('message') }}
+    </div>
+    @endif
     <div class="adminShopContents">
         <div class="adminShopContents__title">
             add new shop
         </div>
+
         <div class="adminShopContents__content">
+
+            <div class="adminShopContents__content--csv-wrapper">
+                <form action="{{ route('csvImport') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div id="adminShopContents__content--csv" style="max-width: 500px; margin: 0 auto;">
+                        <h2>csvファイルから追加する場合はこちら</h2>
+                        <div class="adminShopContents__content--csv-input">
+                            <input type="file" name="csvFile" class="" id="csvFile">
+                            <label class="custom-file-label" for="customFile">CSVファイル選択</label>
+                        </div>
+                    </div>
+                    <div class="form__submit">
+                        <button>インポート</button>
+                    </div>
+                </form>
+            </div>
 
             <form class="form__wrapper" action="{{ route('addNewShop') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form">
-
+                    <h2>直接入力する場合はこちら</h2>
                     <div class="form__item">
                         <input class="form__item--control" type="text" name="shop_name" value="{{ old('name') }}" placeholder="shop name" />
                     </div>

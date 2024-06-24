@@ -60,6 +60,7 @@ Route::middleware(['web', 'auth', 'verified'])->group(
 
         Route::get('/admin/shop/add_new_shop', [AdminShopController::class, 'addNewShopView'])->name('addNewShopView');
         Route::post('/admin/shop/add_new_shop', [AdminShopController::class, 'addNewShop'])->name('addNewShop');
+        Route::post('/admin/shop/csv_add_new_shop', [AdminShopController::class, 'csvImport'])->name('csvImport');
 
         Route::get('/admin/shop/edit_shop', [AdminShopController::class, 'editShopView'])->name('editShopView');
         Route::post('/admin/shop/edit_shop', [AdminShopController::class, 'editShop'])->name('editShop');
