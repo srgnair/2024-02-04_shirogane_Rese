@@ -73,7 +73,7 @@
                     <input type="hidden" name="star" :value="rating" v-model="rating">
                 </div>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
-                <script src="https://unpkg.com/vue-star-rating/dist/VueStarRating.umd.min.js"></script>`
+                <script src="https://unpkg.com/vue-star-rating/dist/VueStarRating.umd.min.js"></script>
                 <script src="{{ asset('js/star.js') }}"></script>
             </div>
             <div class="review__right--input-review-wrapper">

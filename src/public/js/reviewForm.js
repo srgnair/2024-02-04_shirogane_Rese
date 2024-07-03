@@ -37,7 +37,6 @@ function imagePreview(event, f = null) {
   };
 
   reader.readAsDataURL(file);
-<<<<<<< HEAD
 }
 if (reviewImages && reviewImages.length > 0) {
   reviewImages.forEach(function(image) {
@@ -45,6 +44,4 @@ if (reviewImages && reviewImages.length > 0) {
     imgElement.src = "/storage/" + image.image_path;
     previewArea.appendChild(imgElement);
   });
-=======
->>>>>>> parent of a5ff6e7 (Fixed untracked files issue)
 }
