@@ -34,7 +34,10 @@ main {
     background-color: #3F5FEC;
     border-radius: 3px;
     position: relative;
+<<<<<<< HEAD
     min-height: 450px;
+=======
+>>>>>>> parent of a5ff6e7 (Fixed untracked files issue)
 }
 }
 
@@ -57,7 +60,10 @@ main {
     background-color: #3F5FEC;
     border-radius: 3px;
     position: relative;
+<<<<<<< HEAD
     max-height: 500px;
+=======
+>>>>>>> parent of a5ff6e7 (Fixed untracked files issue)
 }
 }
 
@@ -264,6 +270,7 @@ main {
 
 .shop__review--text{
     text-align: left;
+<<<<<<< HEAD
 }
 
 .shop__review--image{
@@ -274,4 +281,6 @@ main {
 .shop__review--image img{
     max-width: 150px;
     max-height: 150px;
+=======
+>>>>>>> parent of a5ff6e7 (Fixed untracked files issue)
 }
