@@ -27,8 +27,6 @@ use App\Http\Controllers\AdminReservesController;
 |
 */
 
-Route::get('/phpinfo', [UserController::class, 'phpinfo']);
-
 Route::get('/register', [UserController::class, 'registerView']);
 Route::post('/register', [UserController::class, 'register'])->name('register');
 Route::get('/thanks', [UserController::class, 'registerThanks'])->name('thanks');
@@ -40,9 +38,15 @@ Route::get('/login/verification_required', [LoginController::class, 'verificatio
 Route::middleware(['web', 'auth', 'verified'])->group(
     function () {
         Route::get('/', [ShopController::class, 'allShopsView'])->name('home');
-        Route::get('/detail/{id}', [ShopController::class, 'detailView'])->name('detail');
+        Route::get('/detail/{shop_id}', [ShopController::class, 'detailView'])->name('detail');
 
         Route::get('/mypage', [MypageController::class, 'mypageView'])->name('mypage');
+
+        Route::get('/post_review/{shop_id}', [ReviewController::class, 'postReviewView'])->name('postReviewView');
+        Route::post('/post_review/{shop_id}', [ReviewController::class, 'postReview'])->name('postReview');
+        Route::delete('/delete_review/{review_id}/{shop_id}', [ReviewController::class, 'deleteReview'])->name('deleteReview');
+        Route::get('/edit_review/{review_id}/{shop_id}', [ReviewController::class, 'editReviewView'])->name('editReviewView');
+        Route::put('/edit_review/{review_id}/{shop_id}', [ReviewController::class, 'editReview'])->name('editReview');
 
         Route::post('/{shop_id}', [LikeController::class, 'like'])->name('like');
         Route::delete('/{shop_id}', [LikeController::class, 'deleteLike'])->name('deleteLike');
@@ -52,12 +56,11 @@ Route::middleware(['web', 'auth', 'verified'])->group(
         Route::get('/reserve', [ReserveController::class, 'reserveCompleteView'])->name('completeReserve');
         Route::delete('/mypage/{id}', [ReserveController::class, 'reserveDelete'])->name('delete');
 
-        Route::post('/detail/review', [ReviewController::class, 'postReview'])->name('review');
-
         Route::get('/admin/shop', [AdminController::class, 'shopAdminView'])->name('shopAdminView');
 
         Route::get('/admin/shop/add_new_shop', [AdminShopController::class, 'addNewShopView'])->name('addNewShopView');
         Route::post('/admin/shop/add_new_shop', [AdminShopController::class, 'addNewShop'])->name('addNewShop');
+        Route::post('/admin/shop/csv_add_new_shop', [AdminShopController::class, 'csvImport'])->name('csvImport');
 
         Route::get('/admin/shop/edit_shop', [AdminShopController::class, 'editShopView'])->name('editShopView');
         Route::post('/admin/shop/edit_shop', [AdminShopController::class, 'editShop'])->name('editShop');

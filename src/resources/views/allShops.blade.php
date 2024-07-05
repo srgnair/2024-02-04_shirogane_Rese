@@ -15,6 +15,15 @@
         <form action="{{ route('home') }}" method="GET">
             @csrf
 
+            @if(Auth::user()->role === 'user' | NULL)
+            <select name="sort_by" id="sort_by">
+                <option value="default">並び替え：</option>
+                <option value="random">ランダム</option>
+                <option value="high">評価が高い順</option>
+                <option value="low">評価が低い順</option>
+            </select>
+            @endif
+
             <select name="area">
                 <option value="">All area</option>
                 <option value="1">東京都</option>
@@ -60,7 +69,7 @@
                 <div class="all-shops__card--footer">
                     <div class="detail-button">
 
-                        <a href="{{ route('detail', ['id' => $shop->id]) }}">詳しくみる</a>
+                        <a href="{{ route('detail', ['shop_id' => $shop->id]) }}">詳しくみる</a>
 
                     </div>
                     <div class="heart">

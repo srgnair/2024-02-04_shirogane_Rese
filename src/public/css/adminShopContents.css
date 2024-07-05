@@ -96,6 +96,27 @@ main {
     text-align: left;
 }
 
+<<<<<<< HEAD
+.adminShopContents__content--csv-wrapper{
+    border: #6E85B7 solid 1px;
+    border-radius: 3px;
+    padding: 0 10px 20px;
+    margin: 20px 0;
+}
+
+#adminShopContents__content--csv{
+    margin: 0 !important;
+}
+
+h2{
+    font-size: 20px;
+}
+
+.adminShopContents__content--csv-input{
+    margin-bottom: 10px;
+}
+=======
 .adminShopContents__content div {
     margin: 10px;
 }
+>>>>>>> parent of a5ff6e7 (Fixed untracked files issue)
