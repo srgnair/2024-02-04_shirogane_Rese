@@ -8,6 +8,7 @@ use App\Models\ReviewImage;
 use App\Models\Shop;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ReviewRequest;
+use App\Http\Requests\DeleteReviewRequest;
 use App\Rules\CanDeleteReview;
 use Illuminate\Support\Facades\Storage;
 
@@ -48,16 +49,9 @@ class ReviewController extends Controller
         return redirect()->route('detail', compact('shop_id'));
     }
 
-    public function deleteReview(ReviewRequest $request, $review_id, $shop_id)
+    public function deleteReview(DeleteReviewRequest $request, $review_id, $shop_id)
     {
         $review = Review::findOrFail($review_id);
-
-        $this->authorize('delete', $review);
-
-        $request->validate([
-            'user_id' => ['required', new CanDeleteReview(auth()->id(), $review_id)],
-        ]);
-
         $review->delete();
 
         return redirect()->route('detail', compact('shop_id'));

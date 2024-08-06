@@ -47,7 +47,7 @@
                     </a>
                     @endif
                     @if($review->user_id === Auth::id() || Auth::user()->role === 'mainAdmin')
-                    <form action="{{ route('deleteReview', ['review_id' => $review->id, 'shop_id' => $shop->id]) }}" method="POST">
+                    <form action="{{ route('deleteReview', ['review_id' => $review->id, 'shop_id' => $shop->id])}}" method="POST">
                         @csrf
                         @method('DELETE')
                         <input type="hidden" name="user_id" value="{{ auth()->id() }}">
