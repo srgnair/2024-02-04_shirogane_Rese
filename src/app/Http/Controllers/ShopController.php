@@ -40,9 +40,9 @@ class ShopController extends Controller
                 ->orderByRaw('ISNULL(avg_star), avg_star DESC');
         } elseif ($sort_by == 'low') {
             $query->leftJoin('reviews', 'shops.id', '=', 'reviews.shop_id')
-                ->selectRaw('shops.*, AVG(reviews.star) as avg_star')
-                ->groupBy('shops.id')
-                ->orderByRaw('ISNULL(avg_star), avg_star ASC');
+            ->selectRaw('shops.*, AVG(reviews.star) as avg_star, COUNT(reviews.id) as reviews_count')
+            ->groupBy('shops.id')
+            ->orderByRaw('reviews_count DESC, avg_star ASC');
         } elseif ($sort_by == 'default') {
             $query->orderBy('id', 'asc');
         } else {
