@@ -74,6 +74,31 @@ Rese（リーズ）
 | 認証           | Fortify |
 | サーバー       | nginx:1.21.1 |
 
+## 環境構築
+
+mkdir new-project-directory
+cd new-project-directory
+git clone https://github.com/your-repo/your-project.git .
+docker compose up -d
+cd src
+composer install
+cp .env.example .env
+php artisan key:generate
+
+（envを編集）
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=laravel_db
+DB_USERNAME=laravel_user
+DB_PASSWORD=laravel_pass
+
+docker compose down
+docker compose up -d
+docker compose exec php bash
+php artisan migrate
+php artisan db:seed
+
 ## テーブル設計
 ####  <img width="540" alt="スクリーンショット 2024-06-03 131314" src="https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/0d2af200-be1d-4137-95da-ad6888578934">
 
