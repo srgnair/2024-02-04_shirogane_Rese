@@ -6,9 +6,8 @@ Rese（リーズ）
 <img width="950" alt="スクリーンショット 2024-03-21 064201" src="https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/3511038c-b0f9-473a-9d90-a775c0efdf46">
 
 ## サービスを作成した背景
-外部の飲食店予約サービスは手数料を取られるので自社で予約サービスを持ちたい。
-
-## ~~アプリケーションURL~~
+- 自社用予約サービスの作成。
+- COACHTECH 様（ https://coachtech.site/ ）への提出課題です。
 
 ## メイン機能
 #### 新規会員登録
@@ -76,28 +75,109 @@ Rese（リーズ）
 
 ## 環境構築
 
-mkdir new-project-directory
-cd new-project-directory
-git clone https://github.com/your-repo/your-project.git .
-docker compose up -d
-cd src
-composer install
+## **Laravel + Docker Compose プロジェクトのクローンから起動まで**
+
+### **前提**
+
+Git、Docker、Docker Composeがインストールされている
+
+### **GitHubからクローンする**
+
+```
+
+git clone https://github.com/srgnair/2024-02-04_shirogane_Rese.git
+cd 2024-02-04_shirogane_Rese
+
+```
+
+### **.envファイルを準備する**
+
+```
+
 cp .env.example .env
+
+```
+
+必要に応じて .env の内容（DB接続情報など）を修正します。
+
+修正例：
+
+```
+
+DB_HOST=mysql
+
+DB_DATABASE=laravel_db
+
+APP_URL=http://localhost
+
+```
+
+### **補足１：Apple Silicon（M1/M2）での注意点**
+
+Apple Siliconを使用している場合、docker-compose.yml に以下を追記：
+
+```
+
+platform: linux/amd64
+
+```
+
+nginx, mysql, mailhog, phpmyadmin など各サービスに必要です。
+
+### 補足２：NotFound: content digest sha256:... not foundが出る場合
+
+タグの変更例：
+
+```
+
+image: mysql:8.0
+
+image: nginx:1.21-alpine
+
+```
+
+### **コンテナをビルドして起動**
+
+```
+
+docker-compose up -d --build
+
+```
+
+### **Laravelの依存パッケージをインストール**
+
+```
+
+docker compose exec php bash
+composer install
+
+```
+
+### **アプリキーの生成**
+
+```
+
+docker-compose exec php bash
+
 php artisan key:generate
 
-（envを編集）
-DB_CONNECTION=mysql
-DB_HOST=mysql
-DB_PORT=3306
-DB_DATABASE=laravel_db
-DB_USERNAME=laravel_user
-DB_PASSWORD=laravel_pass
+```
 
-docker compose down
-docker compose up -d
-docker compose exec php bash
+### **マイグレーション（必要に応じて）**
+
+```
+
+docker-compose exec php bash
+
 php artisan migrate
-php artisan db:seed
+
+```
+
+### **ブラウザで確認**
+
+通常は http://localhost でアクセスできます。
+
+ポートを変更している場合は docker-compose.yml の ports: の設定を確認してください。
 
 ## テーブル設計
 ####  <img width="540" alt="スクリーンショット 2024-06-03 131314" src="https://github.com/srgnair/2024-02-04_shirogane_Rese/assets/143247574/0d2af200-be1d-4137-95da-ad6888578934">
