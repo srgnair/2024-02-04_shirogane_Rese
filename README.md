@@ -108,6 +108,10 @@ DB_HOST=mysql
 
 DB_DATABASE=laravel_db
 
+DB_USERNAME=laravel_user
+
+DB_PASSWORD=laravel_pass
+
 APP_URL=http://localhost
 
 ```
