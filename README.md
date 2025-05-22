@@ -114,6 +114,10 @@ DB_PASSWORD=laravel_pass
 
 APP_URL=http://localhost
 
+MAIL_FROM_ADDRESS=your_email@example.com
+
+MAIL_FROM_NAME="送信者名"
+
 ```
 
 ### **補足１：Apple Silicon（M1/M2）での注意点**
